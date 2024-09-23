@@ -8,5 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "web3": "^4.13.0",
+    "yup": "^1.4.0"
+  }
 }
