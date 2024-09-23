@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/web3": "^1.0.20",
+    "abi-decoder": "^2.4.0",
+    "dotenv": "^16.4.5",
+    "mongodb": "^6.9.0",
     "web3": "^4.13.0",
     "yup": "^1.4.0"
   }
