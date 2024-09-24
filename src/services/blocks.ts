@@ -25,6 +25,8 @@ export const processBlock = async (blockNumber: number) => {
       toBlock: blockNumber,
     });
 
+    console.log("Events array", events);
+
     for (const event of events) {
       const transactionData = {
         //@ts-ignore
@@ -32,14 +34,16 @@ export const processBlock = async (blockNumber: number) => {
         //@ts-ignore
         blockNumber: event.blockNumber,
         //@ts-ignore
-        from: event.from,
+        from: event.returnValues.from,
         //@ts-ignore
-        to: event.to,
+        to: event.returnValues.to,
         value: parseFloat(
           //@ts-ignore
-          web3.utils.fromWei(event.value, "mwei")
+          web3.utils.fromWei(event.returnValues.value, "mwei")
         ).toFixed(6),
         tokenContract: USDT_CONTRACT_ADDRESS,
+        //@ts-ignore
+        event: event.event,
       };
 
       await validateTransaction(transactionData);
